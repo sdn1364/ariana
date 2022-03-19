@@ -1,0 +1,140 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+.triangle{
+    position:relative;
+}
+.triangle.triangle-right::before {
+    position: absolute;
+    content: '';
+    right: 0;
+    top:0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 35px 35px 0;
+    border-color: transparent #f7bb09 transparent transparent;
+
+}
+.triangle.triangle-left::before {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 2px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 35px 35px 0 0;
+    border-color:  #f7bb09 transparent transparent  transparent;
+
+}
+.triangle.triangle-bottom-right::before {
+    position: absolute;
+    content: '';
+    right: -2px;
+    bottom: -2px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 35px 35px;
+    border-color: transparent transparent #f7bb09 transparent;
+    z-index: 10;
+}
+.triangle.triangle-bottom-left::before {
+    position: absolute;
+    content: '';
+    left: -1px;
+    bottom: -1px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 35px 0 0 35px;
+    border-color: transparent transparent transparent #f7bb09;
+    z-index: 10;
+}
+.triangle.triangle-left.triangle-sm::before{
+    border-width: 25px 25px 0 0 !important;
+}
+.triangle.triangle-right.triangle-sm::before{
+    border-width: 0 25px 25px 0 !important;
+}
+.triangle.triangle-left.triangle-md::before{
+    border-width: 30px 30px 0 0 !important;
+
+}
+.triangle.triangle-right.triangle-md::before{
+    border-width: 0 30px 30px 0 !important;
+
+}
+.rectangle.rectangle-right::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    right: 0;
+    display: block;
+    width: 1000px;
+    height: 2px;
+    background-color: #98b3ee;
+}
+.rectangle.rectangle-left::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    display: block;
+    width: 1000px;
+    height: 2px;
+    background-color: #98b3ee;
+}
+
+@media (min-width: 1280px) {
+    .triangle.triangle-left::before{
+        border-width: 50px 50px 0 0!important;
+
+    }
+    .triangle.triangle-right::before{
+        border-width: 0 50px 50px 0!important;
+
+    }
+}
+
+.sector-content > ul{
+    @apply list-outside list-disc my-5 marker:text-secondary-500 marker:text-2xl ltr:pl-5 rtl:pr-5;
+
+}
+.navForHistory .slick-current div div{
+    @apply border-secondary-500 before:bg-secondary-500;
+}
+.navForHistory .slick-current div div div{
+    @apply bg-secondary-500;
+}
+.navForHistory .slick-current div p{
+    @apply text-secondary-500;
+}
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.community-nav-slider .slick-current div{
+    @apply border border-secondary-500;
+}
+@layer utilities {
+    @variants responsive {
+        .masonry {
+            column-gap: 1.5em;
+            column-count: 1;
+        }
+        .masonry-sm {
+            column-gap: 1.5em;
+            column-count: 2;
+        }
+        .masonry-md {
+            column-gap: 1.5em;
+            column-count: 3;
+        }
+        .break-inside {
+            break-inside: avoid;
+        }
+
+    }
+}
